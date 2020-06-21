@@ -1,0 +1,41 @@
+@import "src/dojo-theme";
+.basic-container{
+  padding: 3%;
+}
+
+.full-vh{
+  height: 100vh;
+}
+
+#main-screen{
+  background-image: url("src/assets/main-backgound.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: mat-color($custom-theme-warn, 50);
+}
+.options-container{
+  margin: 0 5%;
+  mat-card-title {
+    color: mat-color($custom-theme-accent, 700);
+  }
+}
+
+.options-container-2 {
+  margin: 0 5%;
+  mat-card-title, .material-icons{
+    color: mat-color($custom-theme-primary, 700)
+  }
+  .material-icons{
+    font-size: 5rem;
+  }
+}
+
+.warn-background{
+  background-color: mat-color($custom-theme-warn, 50);
+}
+
+#form-section{
+  h2{
+    color: mat-color($custom-theme-primary, 700);
+  }
+}

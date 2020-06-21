@@ -1,0 +1,107 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+$md-dojoprimary: (
+  50 : #f1e2e4,
+  100 : #dbb6bb,
+  200 : #c3868e,
+  300 : #ab5661,
+  400 : #99313f,
+  500 : #870d1d,
+  600 : #7f0b1a,
+  700 : #740915,
+  800 : #6a0711,
+  900 : #57030a,
+  A100 : #ff898e,
+  A200 : #ff565d,
+  A400 : #ff232c,
+  A700 : #ff0914,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$md-dojoaccent: (
+  50 : #e4eef6,
+  100 : #bdd4e9,
+  200 : #91b8db,
+  300 : #649bcd,
+  400 : #4385c2,
+  500 : #2270b7,
+  600 : #1e68b0,
+  700 : #195da7,
+  800 : #14539f,
+  900 : #0c4190,
+  A100 : #bfd6ff,
+  A200 : #8cb5ff,
+  A400 : #5994ff,
+  A700 : #4083ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #ffffff,
+  )
+);
+
+$md-dojowarn: (
+  50 : #f1f2f5,
+  100 : #dbdfe5,
+  200 : #c4cad4,
+  300 : #acb5c3,
+  400 : #9aa5b6,
+  500 : #8895a9,
+  600 : #808da2,
+  700 : #758298,
+  800 : #6b788f,
+  900 : #58677e,
+  A100 : #e9f1ff,
+  A200 : #b6d1ff,
+  A400 : #83b1ff,
+  A700 : #69a1ff,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$custom-theme-primary: mat-palette($md-dojoprimary);
+$custom-theme-accent:mat-palette($md-dojoaccent);
+$custom-theme-warn: mat-palette($md-dojowarn);
+$custom-theme: mat-light-theme($custom-theme-primary, $custom-theme-accent, $custom-theme-warn);
+@include angular-material-theme($custom-theme);
