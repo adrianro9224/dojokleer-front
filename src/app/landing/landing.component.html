@@ -2,12 +2,12 @@
   <div class="basic-container full-vh" id="main-screen" fxLayout="row">
       <div fxLayout="column" fxLayoutAlign="center center" fxFlex @inAnimation>
         <img src="assets/kleer-dojo.png" alt="kleer-dojo">
-        <h1 class="mat-display-1">Agile Coach Assessment</h1>
-        <p class="mat-subheading-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est. Pellentesque auctor tincidunt ipsum, sed ornare lectus consectetur at. Etiam vel dignissim augue. Aliquam erat volutpat. Pellentesque quis finibus massa, in vehicula dolor. Aliquam erat volutpat. Cras molestie est in sem feugiat.</p>
-        <button mat-raised-button color="accent">Iniciar</button>
+        <h1 class="mat-display-1 text-center">Agile Coach Assessment</h1>
+        <p class="mat-subheading-2 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est. Pellentesque auctor tincidunt ipsum, sed ornare lectus consectetur at. Etiam vel dignissim augue. Aliquam erat volutpat. Pellentesque quis finibus massa, in vehicula dolor. Aliquam erat volutpat. Cras molestie est in sem feugiat.</p>
+        <a mat-raised-button color="accent" href="#services-section" >Iniciar</a>
       </div>
   </div>
-  <div class="basic-container" fxLayout.gt-md="row" fxLayoutAlign="space-between center" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px">
+  <div id="services-section" class="basic-container" fxLayout.gt-md="row" fxLayoutAlign="space-between center" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px">
     <mat-card class="options-container" @inAnimation>
       <img mat-card-image src="assets/dojo-team.jpg" >
       <mat-card-header>
@@ -37,10 +37,10 @@
     </mat-card>
   </div>
   <div class="basic-container" fxLayout="column" fxLayoutAlign="center center">
-    <button mat-raised-button color="primary">Continue</button>
+    <a mat-raised-button color="primary" href="#skills-section">Continuar</a>
   </div>
   <mat-divider></mat-divider>
-  <div class="warn-background basic-container" fxLayout.gt-md="row" fxLayoutAlign="space-between center" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px">
+  <div id="skills-section" class="warn-background basic-container" fxLayout.gt-md="row" fxLayoutAlign="space-between center" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px">
     <mat-card class="options-container-2">
       <div fxLayout="column" fxLayoutAlign="center center">
         <span class="material-icons">event</span>
@@ -87,14 +87,14 @@
     </mat-card>
   </div>
   <div class="basic-container warn-background" fxLayout="column" fxLayoutAlign="center center">
-    <button mat-raised-button color="accent">Realizar Assessment</button>
+    <a mat-raised-button color="accent"href="#form-section">Realizar Assessment</a>
   </div>
   <mat-divider></mat-divider>
   <div id="form-section" class="basic-container" fxLayout="column">
     <div fxLayout="column" fxLayoutAlign="center center">
       <h2 class="mat-display-1">¿Cual es la madurez en Agile Coach?</h2>
     </div>
-    <div fxLayout.gt-md="row" fxLayoutAlign="space-between center" fxLayout.lt-md="column">
+    <div fxLayout.gt-md="row" fxLayoutAlign="space-between stretch" fxLayout.lt-md="column">
       <div fxFlex>
         <p class="mat-subheading-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est.</p>
         <p class="mat-body-2">Lorem ipsum dolor sit amet:</p>
