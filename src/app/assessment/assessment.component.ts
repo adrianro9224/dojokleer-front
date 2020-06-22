@@ -17,12 +17,6 @@ export class AssessmentComponent implements OnInit {
   theFormGroup: FormGroup;
   private _theFormArray: FormArray
   isEditable = true;
-  answers: string[] = [
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat (Answer 1)',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat (Answer 2)',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat (Answer 3)',
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat (Answer 4)'
-  ];
 
   categoryTree: QuestionsCategory[]
 
@@ -83,7 +77,6 @@ export class AssessmentComponent implements OnInit {
         this._theFormArray.push(this.addFormGroupByQuestionCategory(value));
       }
     )
-    console.info(this._theFormArray);
   }
 
   private getQuestionFormControl(){
