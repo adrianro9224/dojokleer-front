@@ -11,8 +11,7 @@ export class AssessmentComponent implements OnInit {
 
   constructor(private _formBuilder: FormBuilder, private router: Router) { }
 
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
+  theFormGroup: FormGroup;
   isEditable = false;
   answers: string[] = [
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat (Answer 1)',
@@ -22,11 +21,9 @@ export class AssessmentComponent implements OnInit {
   ];
 
   ngOnInit() {
-    this.firstFormGroup = this._formBuilder.group({
+
+    this.theFormGroup = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
     });
   }
 

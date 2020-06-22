@@ -7,20 +7,20 @@
         <h3 class="mat-title">Dojo Assessment</h3>
     </div>
   </div>
-  <div class="content-container">
+  <div [ngClass.lt-md]="{'content-container':false, 'content-container-full-with': true}" [ngClass.gt-md]="{'content-container':true, 'content-container-full-with': false}">
     <mat-card>
       <mat-card-header>
       </mat-card-header>
       <mat-card-content>
         <mat-vertical-stepper linear labelPosition="bottom" #stepper>
-          <mat-step [stepControl]="firstFormGroup" [editable]="true">
+          <mat-step [stepControl]="theFormGroup" [editable]="true">
             <ng-template matStepLabel>Category one</ng-template>
             <div fxLayout="column" class="question-container">
                 <div>
                   <h3 class="mat-h3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est. (Question one) ?</h3>
                 </div>
                 <div>
-                  <form [formGroup]="firstFormGroup">
+                  <form [formGroup]="theFormGroup">
                     <mat-radio-group
                       aria-labelledby="example-radio-group-label"
                       class="example-radio-group"
@@ -35,188 +35,6 @@
                   </form>
                 </div>
             </div>
-          </mat-step>
-          <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
-            <form [formGroup]="secondFormGroup">
-              <ng-template matStepLabel>Category two</ng-template>
-              <div fxLayout="column" class="question-container">
-                <div>
-                  <h3 class="mat-h3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est. (Question one) ?</h3>
-                </div>
-                <div>
-                  <form [formGroup]="secondFormGroup">
-                    <mat-radio-group
-                      aria-labelledby="example-radio-group-label"
-                      class="example-radio-group"
-                      formControlName="secondCtrl">
-                      <mat-radio-button class="example-radio-button" *ngFor="let answer of answers" [value]="answer">
-                        <span>{{answer}}</span>
-                      </mat-radio-button>
-                    </mat-radio-group>
-                    <div>
-                      <button mat-raised-button color="primary" matStepperPrevious>Anterior</button>
-                      <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </form>
-          </mat-step>
-          <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
-            <form [formGroup]="secondFormGroup">
-              <ng-template matStepLabel>Category three</ng-template>
-              <div fxLayout="column" class="question-container">
-                <div>
-                  <h3 class="mat-h3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est. (Question one) ?</h3>
-                </div>
-                <div>
-                  <form [formGroup]="secondFormGroup">
-                    <mat-radio-group
-                      aria-labelledby="example-radio-group-label"
-                      class="example-radio-group"
-                      formControlName="secondCtrl">
-                      <mat-radio-button class="example-radio-button" *ngFor="let answer of answers" [value]="answer">
-                        <span>{{answer}}</span>
-                      </mat-radio-button>
-                    </mat-radio-group>
-                    <div>
-                      <button mat-raised-button color="primary" matStepperPrevious>Anterior</button>
-                      <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </form>
-          </mat-step>
-          <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
-            <form [formGroup]="secondFormGroup">
-              <ng-template matStepLabel>Category four</ng-template>
-              <div fxLayout="column" class="question-container">
-                <div>
-                  <h3 class="mat-h3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est. (Question one) ?</h3>
-                </div>
-                <div>
-                  <form [formGroup]="secondFormGroup">
-                    <mat-radio-group
-                      aria-labelledby="example-radio-group-label"
-                      class="example-radio-group"
-                      formControlName="secondCtrl">
-                      <mat-radio-button class="example-radio-button" *ngFor="let answer of answers" [value]="answer">
-                        <span>{{answer}}</span>
-                      </mat-radio-button>
-                    </mat-radio-group>
-                    <div>
-                      <button mat-raised-button color="primary" matStepperPrevious>Anterior</button>
-                      <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </form>
-          </mat-step>
-          <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
-            <form [formGroup]="secondFormGroup">
-              <ng-template matStepLabel>Category five</ng-template>
-              <div fxLayout="column" class="question-container">
-                <div>
-                  <h3 class="mat-h3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est. (Question one) ?</h3>
-                </div>
-                <div>
-                  <form [formGroup]="secondFormGroup">
-                    <mat-radio-group
-                      aria-labelledby="example-radio-group-label"
-                      class="example-radio-group"
-                      formControlName="secondCtrl">
-                      <mat-radio-button class="example-radio-button" *ngFor="let answer of answers" [value]="answer">
-                        <span>{{answer}}</span>
-                      </mat-radio-button>
-                    </mat-radio-group>
-                    <div>
-                      <button mat-raised-button color="primary" matStepperPrevious>Anterior</button>
-                      <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </form>
-          </mat-step>
-          <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
-            <form [formGroup]="secondFormGroup">
-              <ng-template matStepLabel>Category six</ng-template>
-              <div fxLayout="column" class="question-container">
-                <div>
-                  <h3 class="mat-h3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est. (Question one) ?</h3>
-                </div>
-                <div>
-                  <form [formGroup]="secondFormGroup">
-                    <mat-radio-group
-                      aria-labelledby="example-radio-group-label"
-                      class="example-radio-group"
-                      formControlName="secondCtrl">
-                      <mat-radio-button class="example-radio-button" *ngFor="let answer of answers" [value]="answer">
-                        <span>{{answer}}</span>
-                      </mat-radio-button>
-                    </mat-radio-group>
-                    <div>
-                      <button mat-raised-button color="primary" matStepperPrevious>Anterior</button>
-                      <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </form>
-          </mat-step>
-          <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
-            <form [formGroup]="secondFormGroup">
-              <ng-template matStepLabel>Category seven</ng-template>
-              <div fxLayout="column" class="question-container">
-                <div>
-                  <h3 class="mat-h3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est. (Question one) ?</h3>
-                </div>
-                <div>
-                  <form [formGroup]="secondFormGroup">
-                    <mat-radio-group
-                      aria-labelledby="example-radio-group-label"
-                      class="example-radio-group"
-                      formControlName="secondCtrl">
-                      <mat-radio-button class="example-radio-button" *ngFor="let answer of answers" [value]="answer">
-                        <span>{{answer}}</span>
-                      </mat-radio-button>
-                    </mat-radio-group>
-                    <div>
-                      <button mat-raised-button color="primary" matStepperPrevious>Anterior</button>
-                      <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </form>
-          </mat-step>
-          <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
-            <form [formGroup]="secondFormGroup">
-              <ng-template matStepLabel>Category eight</ng-template>
-              <div fxLayout="column" class="question-container">
-                <div>
-                  <h3 class="mat-h3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est. (Question one) ?</h3>
-                </div>
-                <div>
-                  <form [formGroup]="secondFormGroup">
-                    <mat-radio-group
-                      aria-labelledby="example-radio-group-label"
-                      class="example-radio-group"
-                      formControlName="secondCtrl">
-                      <mat-radio-button class="example-radio-button" *ngFor="let answer of answers" [value]="answer">
-                        <span>{{answer}}</span>
-                      </mat-radio-button>
-                    </mat-radio-group>
-                    <div>
-                      <button mat-raised-button color="primary" matStepperPrevious>Anterior</button>
-                      <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </form>
           </mat-step>
           <mat-step>
             <ng-template matStepLabel>Done</ng-template>

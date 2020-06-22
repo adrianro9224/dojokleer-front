@@ -13,13 +13,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .header {
-  height: 5vh;
+  height: 10vh;
 }
 
 .content-container{
   padding: 10vh;
   background-color: mat-color($custom-theme-warn, 50);
   min-height: 85vh;
+}
+.content-container-full-with{
+  background-color: mat-color($custom-theme-warn, 50);
+  min-height: 90vh;
 }
 
 .full-vh{
