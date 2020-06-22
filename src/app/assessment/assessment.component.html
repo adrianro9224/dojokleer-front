@@ -39,9 +39,9 @@
               </div>
             </mat-step>
             <mat-step>
-              <ng-template matStepLabel>Done</ng-template>
-              <p>You are now done.</p>
-              <div fxLayout="column" fxLayoutAlign.lt-md="space-around stretch" fxLayoutAlign.gt-md="space-between center">
+              <ng-template matStepLabel>Listo!</ng-template>
+              <p class="mat-body-2">Listo, has completado el Assesstment ahora vamos a ver los resultados, usa el boton 'Finalizar' para ir a verlos.</p>
+              <div fxLayout="column" fxLayoutAlign.lt-md="space-around stretch" fxLayoutAlign.gt-md="space-between center" fxLayoutGap="1vh">
                 <button mat-raised-button color="accent" matStepperPrevious>Anterior</button>
                 <button mat-raised-button color="accent" (click)="stepper.reset()">Reiniciar</button>
                 <button mat-raised-button color="warn" (click)="saveAssessment()">Finalizar</button>
