@@ -1,5 +1,35 @@
+@import "src/dojo-theme";
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; scroll-behavior: smooth}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.warn-background{
+  background-color: mat-color($custom-theme-warn, 50);
+}
+
+.accent-background{
+  background-color: mat-color($custom-theme-accent, 700);
+}
+
+.header {
+  height: 5vh;
+}
+
+.content-container{
+  padding: 10vh;
+  background-color: mat-color($custom-theme-warn, 50);
+  min-height: 85vh;
+}
+
+.full-vh{
+  height: 100vh;
+}
+.mat-radio-label{
+  white-space: normal !important;
+}
+.question-container{
+  margin-top: 5%;
+}
+
 

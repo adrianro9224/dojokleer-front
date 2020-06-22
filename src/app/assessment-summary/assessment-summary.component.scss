@@ -1,0 +1,5 @@
+@import "src/dojo-theme";
+h3.mat-title {
+  color: mat-color($custom-theme-warn, 50);
+  margin: 0 !important;
+}

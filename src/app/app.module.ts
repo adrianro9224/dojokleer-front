@@ -9,15 +9,23 @@ import {FlexLayoutModule, FlexModule} from "@angular/flex-layout";
 import {MatButtonModule} from "@angular/material/button";
 import {MatCard, MatCardModule} from "@angular/material/card";
 import {MatDividerModule} from "@angular/material/divider";
-import {MatFormFieldModule, MatLabel} from "@angular/material/form-field";
+import {MatError, MatFormFieldModule, MatLabel} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
+import {ReactiveFormsModule} from "@angular/forms";
+import { AssessmentComponent } from './assessment/assessment.component';
+import { AssessmentSummaryComponent } from './assessment-summary/assessment-summary.component';
+import {MatStepperModule} from "@angular/material/stepper";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatRadioModule} from "@angular/material/radio";
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingComponent
+    LandingComponent,
+    AssessmentComponent,
+    AssessmentSummaryComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +38,11 @@ import {MatSelectModule} from "@angular/material/select";
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    ReactiveFormsModule,
+    MatStepperModule,
+    MatCheckboxModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
