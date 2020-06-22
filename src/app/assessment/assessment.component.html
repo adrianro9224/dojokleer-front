@@ -12,40 +12,42 @@
       <mat-card-header>
       </mat-card-header>
       <mat-card-content>
-        <mat-vertical-stepper linear labelPosition="bottom" #stepper>
-          <mat-step [stepControl]="theFormGroup" [editable]="true">
-            <ng-template matStepLabel>Category one</ng-template>
-            <div fxLayout="column" class="question-container">
+        <form [formGroup]="theFormGroup">
+          <mat-vertical-stepper linear labelPosition="bottom" #stepper formArrayName="answersByCategory">
+            <mat-step [stepControl]="theFormGroup" [editable]="isEditable" *ngFor="let category of categoryTree">
+              <ng-template matStepLabel>{{category.categoryName}}</ng-template>
+              <div fxLayout="column" class="question-container" *ngFor="let question of category.questionEntities; let i = index;">
                 <div>
-                  <h3 class="mat-h3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est. (Question one) ?</h3>
+                  <h3 class="mat-h3 color-primary-700">{{question.question}}</h3>
                 </div>
                 <div>
-                  <form [formGroup]="theFormGroup">
+                  <form [formGroupName]="i">
                     <mat-radio-group
                       aria-labelledby="example-radio-group-label"
                       class="example-radio-group"
-                      formControlName="firstCtrl">
-                      <mat-radio-button class="example-radio-button" *ngFor="let answer of answers" [value]="answer">
-                        <span>{{answer}}</span>
+                      [formControlName]="category.questionCategoryId+'-'+question.questionId">
+                      <mat-radio-button class="example-radio-button" *ngFor="let answer of question.answerEntities" [value]="answer.questionAnswerId">
+                        <span>{{answer.answer}}</span>
                       </mat-radio-button>
                     </mat-radio-group>
-                    <div>
+                    <div fxLayout="column" fxLayoutAlign.lt-md="space-around stretch" fxLayoutAlign.gt-md="space-between center">
                       <button mat-raised-button color="primary" matStepperNext>Siguiente</button>
                     </div>
                   </form>
                 </div>
-            </div>
-          </mat-step>
-          <mat-step>
-            <ng-template matStepLabel>Done</ng-template>
-            <p>You are now done.</p>
-            <div>
-              <button mat-raised-button color="accent" matStepperPrevious>Back</button>
-              <button mat-raised-button color="accent" (click)="stepper.reset()">Reiniciar</button>
-              <button mat-raised-button color="warn" (click)="saveAssessment()">Finalizar</button>
-            </div>
-          </mat-step>
-        </mat-vertical-stepper>
+              </div>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>Done</ng-template>
+              <p>You are now done.</p>
+              <div>
+                <button mat-raised-button color="accent" matStepperPrevious>Back</button>
+                <button mat-raised-button color="accent" (click)="stepper.reset()">Reiniciar</button>
+                <button mat-raised-button color="warn" (click)="saveAssessment()">Finalizar</button>
+              </div>
+            </mat-step>
+          </mat-vertical-stepper>
+        </form>
       </mat-card-content>
     </mat-card>
   </div>
