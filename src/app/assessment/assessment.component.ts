@@ -93,6 +93,7 @@ export class AssessmentComponent implements OnInit {
 
   saveAssessment(){
     this.router.navigate(['assessment-summary']);
+    console.log(this.theFormGroup);
   }
 
 
