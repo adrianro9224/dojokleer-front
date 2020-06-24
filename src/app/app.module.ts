@@ -19,6 +19,8 @@ import { AssessmentSummaryComponent } from './assessment-summary/assessment-summ
 import {MatStepperModule} from "@angular/material/stepper";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatRadioModule} from "@angular/material/radio";
+import {ChartsModule} from "ng2-charts";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import {MatRadioModule} from "@angular/material/radio";
     ReactiveFormsModule,
     MatStepperModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    ChartsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

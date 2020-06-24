@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {animate, style, transition, trigger} from "@angular/animations";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import {CountryService} from "../country.service";
+import {Country} from "../country";
 
 @Component({
   selector: 'app-landing',
@@ -24,10 +26,11 @@ export class LandingComponent implements OnInit {
       'country': new FormControl('', [Validators.required])
     }
   )
-
-  constructor(private router: Router){ }
+  countries: Country[]
+  constructor(private router: Router, private countryService: CountryService){ }
 
   ngOnInit(): void {
+    this.countryService.getAllCountries().subscribe(data => this.countries = data);
   }
 
   saveInit(){

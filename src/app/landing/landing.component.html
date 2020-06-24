@@ -127,8 +127,7 @@
                 <mat-label>Select</mat-label>
                 <mat-select formControlName="country">
                   <mat-option value="option" disabled>Option</mat-option>
-                  <mat-option value="CO">Colombia</mat-option>
-                  <mat-option value="AR">Argentina</mat-option>
+                  <mat-option [value]="country.countryId" *ngFor="let country of countries">{{country.name}}</mat-option>
                 </mat-select>
                 <mat-error *ngIf="initAssessmentForm.get('country').invalid">:( Campo invalido</mat-error>
               </mat-form-field>
