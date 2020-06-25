@@ -7,7 +7,7 @@ import {AssessmentSummaryComponent} from "./assessment-summary/assessment-summar
 
 const routes: Routes = [
   {path: '', component: LandingComponent},
-  {path: 'assessment', component: AssessmentComponent},
+  {path: 'assessment/:id', component: AssessmentComponent},
   {path: 'assessment-summary', component: AssessmentSummaryComponent},
 ];
 

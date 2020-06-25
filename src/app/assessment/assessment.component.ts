@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {QuestionsCategory} from "../questions-category.object";
-import {Question} from "../question.object";
-import {QuestionAnswer} from "../question-answer.object";
 
 @Component({
   selector: 'app-assessment',

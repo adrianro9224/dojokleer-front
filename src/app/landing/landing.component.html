@@ -124,9 +124,9 @@
                 <mat-error *ngIf="initAssessmentForm.get('email').invalid">Campo invalido</mat-error>
               </mat-form-field>
               <mat-form-field appearance="fill">
-                <mat-label>Select</mat-label>
+                <mat-label>Pais *</mat-label>
                 <mat-select formControlName="country">
-                  <mat-option value="option" disabled>Option</mat-option>
+                  <mat-option value="option" disabled>Selecciona una opcion</mat-option>
                   <mat-option [value]="country.countryId" *ngFor="let country of countries">{{country.name}}</mat-option>
                 </mat-select>
                 <mat-error *ngIf="initAssessmentForm.get('country').invalid">:( Campo invalido</mat-error>

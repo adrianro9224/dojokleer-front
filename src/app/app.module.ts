@@ -21,6 +21,8 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatRadioModule} from "@angular/material/radio";
 import {ChartsModule} from "ng2-charts";
 import {HttpClientModule} from "@angular/common/http";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {NotificationService} from "./notification.service";
 
 @NgModule({
   declarations: [
@@ -46,9 +48,10 @@ import {HttpClientModule} from "@angular/common/http";
     MatCheckboxModule,
     MatRadioModule,
     ChartsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule
   ],
-  providers: [],
+  providers: [NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
