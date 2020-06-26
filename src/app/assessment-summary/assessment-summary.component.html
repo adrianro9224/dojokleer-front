@@ -12,15 +12,20 @@
       <mat-card-header>
       </mat-card-header>
       <mat-card-content>
-        <div style="display: block">
+        <div style="display: block" *ngIf="dataLoaded">
           <canvas baseChart
                   [datasets]="radarChartData"
                   [options]="radarChartOptions"
                   [labels]="radarChartLabels"
-                  [chartType]="radarChartType">
+                  [chartType]="radarChartType"
+                  [plugins]="pieChartPlugins"
+          >
           </canvas>
         </div>
-        <a mat-raised-button color="primary" (click)="downloadCanvas($event)">Descargar</a>
+        <div fxLayout.lt-md="column" fxLayout.gt-md="row" fxLayoutAlign.gt-md="center center" fxLayoutGap="10vh">
+          <a mat-raised-button color="primary" (click)="downloadCanvas($event)">Descargar</a>
+          <button id="share-executor" mat-raised-button color="accent" (click)="openBottomSheet($event)">Compartir</button>
+        </div>
       </mat-card-content>
     </mat-card>
   </div>

@@ -1,21 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LandingComponent } from './landing/landing.component';
-import {FlexLayoutModule, FlexModule} from "@angular/flex-layout";
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {LandingComponent} from './landing/landing.component';
+import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatButtonModule} from "@angular/material/button";
-import {MatCard, MatCardModule} from "@angular/material/card";
+import {MatCardModule} from "@angular/material/card";
 import {MatDividerModule} from "@angular/material/divider";
-import {MatError, MatFormFieldModule, MatLabel} from "@angular/material/form-field";
+import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {ReactiveFormsModule} from "@angular/forms";
-import { AssessmentComponent } from './assessment/assessment.component';
-import { AssessmentSummaryComponent } from './assessment-summary/assessment-summary.component';
+import {AssessmentComponent} from './assessment/assessment.component';
+import {AssessmentSummaryComponent, BottomSheetOverviewSheet} from './assessment-summary/assessment-summary.component';
 import {MatStepperModule} from "@angular/material/stepper";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatRadioModule} from "@angular/material/radio";
@@ -23,13 +23,20 @@ import {ChartsModule} from "ng2-charts";
 import {HttpClientModule} from "@angular/common/http";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {NotificationService} from "./notification.service";
+import {ErrorInterceptorProvider} from "./error-handler.service";
+import {MatBottomSheetModule} from "@angular/material/bottom-sheet";
+import {MatListModule} from "@angular/material/list";
+import {ShareButtonModule} from "ngx-sharebuttons/button";
+import {ShareIconsModule} from "ngx-sharebuttons/icons";
+import {ShareButtonsModule} from "ngx-sharebuttons/buttons";
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     AssessmentComponent,
-    AssessmentSummaryComponent
+    AssessmentSummaryComponent,
+    BottomSheetOverviewSheet
   ],
   imports: [
     BrowserModule,
@@ -49,9 +56,14 @@ import {NotificationService} from "./notification.service";
     MatRadioModule,
     ChartsModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatBottomSheetModule,
+    MatListModule,
+    ShareButtonModule,
+    ShareIconsModule,
+    ShareButtonsModule
   ],
-  providers: [NotificationService],
+  providers: [NotificationService, ErrorInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

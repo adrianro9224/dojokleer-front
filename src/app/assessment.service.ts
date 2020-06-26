@@ -9,6 +9,8 @@ import {Assessment} from "./assessment.object";
 import {RegisterStatus} from "./register-status.enum";
 import {Observable} from "rxjs";
 import {QuestionsCategory} from "./questions-category.object";
+import {RegisterAssessmentAnswerForm} from "./register-assessment-answer-form";
+import {AssessmentSummaryRadarChart} from "./assessment-summary-radar-chart";
 
 @Injectable({
   providedIn: 'root'
@@ -39,22 +41,6 @@ export class AssessmentService {
               'top'
             );
             return <Assessment> response.body.data;
-          case 400:
-            this.notificationService.showMessages(
-              response.body.errors.map(value => value.message).reverse(),
-              1000,
-              'center',
-              'top'
-            );
-            break;
-          case 500:
-            this.notificationService.showMessage(
-              'Houston we have a problem',
-              1000,
-              'center',
-              'top'
-            );
-            break;
         }
       })
     );
@@ -64,20 +50,52 @@ export class AssessmentService {
     return this.http.get<BodyResponseBase>(
       Config.API_URL+Config.API_PORT+'/'+Config.API_VERSION+'/questioncategory/status/'+RegisterStatus.ACTIVE,
       {headers: new HttpHeaders({'Access-Control-Allow-Origin': '*'}),observe: 'response', reportProgress: true, responseType: "json"}
-    ).pipe(map(response => {
+    ).pipe(
+      map(response => {
         switch (response.status) {
           case 200:
             return <QuestionsCategory[]> response.body.data;
-          case 204:
-            return [];
-          case 500:
+        }
+      })
+    );
+  }
+
+  registerAssessmentAnswers(assessmentId: number, registerAssessmentAnswerForm: RegisterAssessmentAnswerForm){
+    this.notificationService.showMessage(
+      "Registrando resultados",
+      2000,
+      'center',
+      'top'
+    );
+    return this.http.post<BodyResponseBase>(
+      Config.API_URL+Config.API_PORT+'/'+Config.API_VERSION+'/assessment/'+assessmentId+'/answers',
+      registerAssessmentAnswerForm,
+      {headers: new HttpHeaders({'Access-Control-Allow-Origin': '*'}),observe: 'response', reportProgress: true, responseType: "json"}
+    ).pipe(
+      map(response => {
+        switch (response.status) {
+          case 200:
             this.notificationService.showMessage(
-              'Houston we have a problem',
-              1000,
+              "Resultados registrados",
+              2000,
               'center',
               'top'
             );
-            break;
+            return <any> response.body.data;
+        }
+      })
+    );
+  }
+
+  getAssessmentSummary(assessmentId: number): Observable<AssessmentSummaryRadarChart>{
+    return this.http.get<BodyResponseBase>(
+      Config.API_URL+Config.API_PORT+'/'+Config.API_VERSION+'/assessment/'+assessmentId+'/summary',
+      {headers: new HttpHeaders({'Access-Control-Allow-Origin': '*'}),observe: 'response', reportProgress: true, responseType: "json"}
+    ).pipe(
+      map(response => {
+        switch (response.status) {
+          case 200:
+            return <AssessmentSummaryRadarChart> response.body.data;
         }
       })
     );

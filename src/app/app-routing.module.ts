@@ -8,7 +8,7 @@ import {AssessmentSummaryComponent} from "./assessment-summary/assessment-summar
 const routes: Routes = [
   {path: '', component: LandingComponent},
   {path: 'assessment/:id', component: AssessmentComponent},
-  {path: 'assessment-summary', component: AssessmentSummaryComponent},
+  {path: 'assessment-summary/:id', component: AssessmentSummaryComponent},
 ];
 
 @NgModule({
