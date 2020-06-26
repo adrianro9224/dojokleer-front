@@ -13,10 +13,10 @@
       </mat-card-header>
       <mat-card-content>
         <div [formGroup]="theFormGroup">
-          <mat-vertical-stepper linear labelPosition="bottom" #stepper formArrayName="answersByCategory">
-            <mat-step [stepControl]="theFormGroup" [editable]="isEditable" *ngFor="let category of categoryTree">
+          <mat-vertical-stepper  labelPosition="bottom" #stepper formArrayName="answersByCategory">
+            <mat-step [stepControl]="theFormGroup" [editable]="isEditable" *ngFor="let category of categoryTree$ | async; let i = index;">
               <ng-template matStepLabel>{{category.categoryName}}</ng-template>
-              <div fxLayout="column" class="question-container" *ngFor="let question of category.questionEntities; let i = index;">
+              <div fxLayout="column" class="question-container" *ngFor="let question of category.questionEntities;">
                 <div>
                   <h3 class="mat-h3 color-primary-700">{{question.question}}</h3>
                 </div>
@@ -30,7 +30,7 @@
                         <span>{{answer.answer}}</span>
                       </mat-radio-button>
                     </mat-radio-group>
-                    <div fxLayout="column" fxLayoutAlign.lt-md="space-around stretch" fxLayoutAlign.gt-md="space-between center">
+                    <div fxLayout="column" fxLayoutAlign.lt-md="space-around stretch" fxLayoutAlign.gt-md="space-between center" fxLayoutGap="1vh">
                       <button *ngIf="i > 0" mat-raised-button color="accent" matStepperPrevious>Anterior</button>
                       <button mat-raised-button color="primary" matStepperNext [disabled]="theFormArray.at(i).invalid">Siguiente</button>
                     </div>
@@ -44,7 +44,7 @@
               <div fxLayout="column" fxLayoutAlign.lt-md="space-around stretch" fxLayoutAlign.gt-md="space-between center" fxLayoutGap="1vh">
                 <button mat-raised-button color="warn" matStepperPrevious>Anterior</button>
                 <button mat-raised-button color="warn" (click)="stepper.reset()">Reiniciar</button>
-                <button mat-raised-button color="primary" [disabled]="theFormGroup.invalid" (click)="saveAssessment()">Finalizar</button>
+                <button mat-raised-button color="primary" [disabled]="theFormGroup.invalid" (click)="saveAssessmentAnswer()">Finalizar</button>
               </div>
             </mat-step>
           </mat-vertical-stepper>

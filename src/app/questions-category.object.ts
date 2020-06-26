@@ -4,5 +4,10 @@ export interface QuestionsCategory {
   questionCategoryId: number;
   categoryName: string;
   categoryDescription: string;
-  questionEntities: Question[]
+  questionEntities: Question[];
+  createdBy: string;
+  createdAt: string;
+  updatedBy: string;
+  updatedAt: string;
+  status: string;
 }

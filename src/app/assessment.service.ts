@@ -6,6 +6,9 @@ import {map} from "rxjs/operators";
 import {CreateAssessmentForm} from "./create-assessment-form";
 import {NotificationService} from "./notification.service";
 import {Assessment} from "./assessment.object";
+import {RegisterStatus} from "./register-status.enum";
+import {Observable} from "rxjs";
+import {QuestionsCategory} from "./questions-category.object";
 
 @Injectable({
   providedIn: 'root'
@@ -46,7 +49,30 @@ export class AssessmentService {
             break;
           case 500:
             this.notificationService.showMessage(
-              ':(',
+              'Houston we have a problem',
+              1000,
+              'center',
+              'top'
+            );
+            break;
+        }
+      })
+    );
+  }
+
+  getCategoriesTree(): Observable<QuestionsCategory[]>{
+    return this.http.get<BodyResponseBase>(
+      Config.API_URL+Config.API_PORT+'/'+Config.API_VERSION+'/questioncategory/status/'+RegisterStatus.ACTIVE,
+      {headers: new HttpHeaders({'Access-Control-Allow-Origin': '*'}),observe: 'response', reportProgress: true, responseType: "json"}
+    ).pipe(map(response => {
+        switch (response.status) {
+          case 200:
+            return <QuestionsCategory[]> response.body.data;
+          case 204:
+            return [];
+          case 500:
+            this.notificationService.showMessage(
+              'Houston we have a problem',
               1000,
               'center',
               'top'
