@@ -1,39 +1,31 @@
 <div fxLayout="column" fxLayoutAlign="start none" class="mat-typography">
   <div class="basic-container full-vh" id="main-screen" fxLayout="row">
       <div fxLayout="column" fxLayoutAlign="center center" fxFlex @inAnimation>
-        <img src="assets/kleer-dojo.png" alt="kleer-dojo">
-        <h1 class="mat-display-1 text-center">Agile Coach Assessment</h1>
-        <p class="mat-subheading-2 text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est. Pellentesque auctor tincidunt ipsum, sed ornare lectus consectetur at. Etiam vel dignissim augue. Aliquam erat volutpat. Pellentesque quis finibus massa, in vehicula dolor. Aliquam erat volutpat. Cras molestie est in sem feugiat.</p>
+        <!--<img src="assets/kleer-dojo.png" alt="kleer-dojo">-->
+        <h1 class="mat-display-2 text-center">Agile Coach Competency Assessment</h1>
+        <p class="mat-subheading-2 text-center">Descubre tu nivel de madurez como Agile Coach e identifica el siguiente paso en tu camino de mejora continua en la agilidad.</p>
         <a mat-raised-button color="accent" href="#services-section" >Iniciar</a>
       </div>
   </div>
   <div id="services-section" class="basic-container" fxLayout.gt-md="row" fxLayoutAlign="space-between center" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px">
-    <h3 class="mat-display-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+    <h3 class="mat-display-1">Agile coaching competency framework</h3>
     <mat-card class="options-container" @inAnimation>
-      <img mat-card-image src="assets/dojo-team.jpg" >
+      <img mat-card-image src="assets/agile-diagram.png" >
       <mat-card-header>
-        <mat-card-title>Thing one</mat-card-title>
+        <!--<mat-card-title>Thing one</mat-card-title>-->
       </mat-card-header>
       <mat-card-content>
-        <p class="mat-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est.</p>
+        <p class="mat-body">Este Assessment está basado en  basado en el Agile Competency Framework de Lyssa Adkins y Michael K. Spayd
+          En el cual podrás reflexionar sobre tu nivel de madurez en la agilidad!</p>
       </mat-card-content>
     </mat-card>
     <mat-card @inAnimation class="options-container">
-      <img mat-card-image src="assets/dojo-space.jpg" >
+      <!--<img mat-card-image src="assets/dojo-space.jpg" >-->
       <mat-card-header>
-        <mat-card-title>Thing two</mat-card-title>
+        <mat-card-title class="text-center">Para conocer más detalles sobre el Agile competency framework mira este webinar:</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <p class="mat-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est.</p>
-      </mat-card-content>
-    </mat-card>
-    <mat-card @inAnimation class="options-container">
-      <img mat-card-image src="assets/dojo-team.jpg" >
-      <mat-card-header>
-        <mat-card-title>Thing three</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p class="mat-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est.</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Spe-NqLfnCg?start=1306" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </mat-card-content>
     </mat-card>
   </div>
@@ -41,54 +33,58 @@
     <a mat-raised-button color="primary" href="#skills-section">Continuar</a>
   </div>
   <mat-divider></mat-divider>
-  <div id="skills-section" class="warn-background basic-container" fxLayout.gt-md="row" fxLayoutAlign="space-around center" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px">
+  <div fxLayout="column" class=" basic-container warn-background" fxLayoutAlign="center center">
+    <h2 class="mat-display-1">Qué es el Agile Coach competency assessment?</h2>
+  </div>
+  <div id="skills-section" class="warn-background" fxLayout.gt-md="row" fxLayoutAlign="space-around center" fxLayout.lt-md="column" fxLayoutGap.lt-md="10px">
     <mat-card class="options-container-2" fxFlex.lt-md="25">
-      <div fxLayout="column" fxLayoutAlign="center center">
-        <span class="material-icons">event</span>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <span class="material-icons">directions_run</span>
+        <span class="material-icons">terrain</span>
       </div>
       <mat-card-header fxLayout="column" fxLayoutAlign="center center">
-        <mat-card-title>Thing three dot one</mat-card-title>
+        <mat-card-title>Desafio</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <p class="mat-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est.</p>
+        <p class="mat-body">Es un desafío para las personas que buscan mejorar en su camino ágil.</p>
       </mat-card-content>
     </mat-card>
     <mat-card class="options-container-2">
       <div fxLayout="column" fxLayoutAlign="center center">
-        <span class="material-icons">help</span>
+        <span class="material-icons">rule</span>
       </div>
       <mat-card-header fxLayout="column" fxLayoutAlign="center center">
-        <mat-card-title>Thing three dot one</mat-card-title>
+        <mat-card-title>Evaluación</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <p class="mat-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est.</p>
+        <p class="mat-body">Es una evaluación para determinar la madurez actual en Agile coaching  y medir el progreso de cara a una meta.</p>
       </mat-card-content>
     </mat-card>
     <mat-card class="options-container-2">
       <div fxLayout="column" fxLayoutAlign="center center">
-        <span class="material-icons">sentiment_satisfied_alt</span>
+        <span class="material-icons">build</span>
       </div>
       <mat-card-header fxLayout="column" fxLayoutAlign="center center">
-        <mat-card-title>Thing three dot one</mat-card-title>
+        <mat-card-title>Herramienta</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <p class="mat-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est.</p>
+        <p class="mat-body">Es una herramienta para identificar y priorizar metas de mejora, y siguientes acciones para llegar a la meta.</p>
       </mat-card-content>
     </mat-card>
     <mat-card class="options-container-2">
       <div fxLayout="column" fxLayoutAlign="center center">
-        <span class="material-icons">self_improvement</span>
+        <span class="material-icons">psychology</span>
       </div>
       <mat-card-header fxLayout="column" fxLayoutAlign="center center">
-        <mat-card-title>Thing three dot one</mat-card-title>
+        <mat-card-title>Oportunidad</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <p class="mat-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est.</p>
+        <p class="mat-body">Es una oportunidad para reflexionar sobre nuestro camino en la agilidad y nuestras propias brechas.</p>
       </mat-card-content>
     </mat-card>
   </div>
   <div class="basic-container warn-background" fxLayout="column" fxLayoutAlign="center center">
-    <a mat-raised-button color="accent" href="#form-section">Realizar Assessment</a>
+    <a mat-raised-button color="accent" href="#form-section">Tomar el Assessment</a>
   </div>
   <mat-divider></mat-divider>
   <div id="form-section" class="basic-container" fxLayout="column">
@@ -99,13 +95,11 @@
       <div fxFlex>
         <mat-card>
           <mat-card-content>
-            <p class="mat-subheading-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec sem consequat, euismod orci non, blandit est.</p>
-            <p class="mat-body-2">Lorem ipsum dolor sit amet:</p>
+            <p class="mat-subheading-1">Este assessment te ayudará a descubrir tu nivel de madurez en las 8 competencias principales de Agile Coaching.</p>
+            <p class="mat-body-2">Luego de realizar el assessment obtendrás:</p>
             <ul class="mat-subheading-2">
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+              <li>Una gráfica con tu nivel de madurez en cada competencia.</li>
+              <li>Recomendaciones basadas en tu nivel de madurez (Pronto).</li>
             </ul>
           </mat-card-content>
         </mat-card>

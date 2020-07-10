@@ -7,9 +7,17 @@
       <h3 class="mat-title">Dojo Assessment summary</h3>
     </div>
   </div>
-  <div class="content-container">
+  <div fxLayout="column" fxLayoutAlign="center stretch" [ngClass.lt-md]="{'content-container':false, 'content-container-full-with': true}" [ngClass.gt-md]="{'content-container':true, 'content-container-full-with': false}">
     <mat-card>
-      <mat-card-header>
+      <mat-card-header fxLayout="column" fxLayoutAlign="center center">
+        <mat-chip-list aria-label="raking" selectable="false">
+          <mat-chip color="accent" selected>Clasificación:</mat-chip>
+          <mat-chip>2 - Novato</mat-chip>
+          <mat-chip>4 - Principiante</mat-chip>
+          <mat-chip>6 - Competente</mat-chip>
+          <mat-chip>8 - Profesional</mat-chip>
+          <mat-chip>10 - Experto</mat-chip>
+        </mat-chip-list>
       </mat-card-header>
       <mat-card-content>
         <div style="display: block" *ngIf="dataLoaded">

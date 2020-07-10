@@ -29,6 +29,7 @@ import {MatListModule} from "@angular/material/list";
 import {ShareButtonModule} from "ngx-sharebuttons/button";
 import {ShareIconsModule} from "ngx-sharebuttons/icons";
 import {ShareButtonsModule} from "ngx-sharebuttons/buttons";
+import {MatChipsModule} from "@angular/material/chips";
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import {ShareButtonsModule} from "ngx-sharebuttons/buttons";
     MatListModule,
     ShareButtonModule,
     ShareIconsModule,
-    ShareButtonsModule
+    ShareButtonsModule,
+    MatChipsModule
   ],
   providers: [NotificationService, ErrorInterceptorProvider],
   bootstrap: [AppComponent]
