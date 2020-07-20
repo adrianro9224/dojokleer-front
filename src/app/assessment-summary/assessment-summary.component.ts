@@ -39,7 +39,31 @@ export class AssessmentSummaryComponent implements OnInit, AfterContentInit {
   }];
   // Radar
   public radarChartOptions: RadialChartOptions = {
-    responsive: true
+    responsive: true,
+    tooltips : {
+      callbacks: {
+        label(tooltipItem: Chart.ChartTooltipItem, data: Chart.ChartData): string | string[] {
+          let auxLabel = data.datasets[tooltipItem.datasetIndex].label;
+          let auxValue = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+          if( auxValue > 0 && auxValue <= 2) {
+            auxLabel = 'Novato';
+          }
+          if( auxValue > 2 && auxValue <= 4) {
+            auxLabel = 'Principiante';
+          }
+          if( auxValue > 4 && auxValue <= 6) {
+            auxLabel = 'Competente';
+          }
+          if( auxValue > 6 && auxValue <= 8) {
+            auxLabel = 'Profesional';
+          }
+          if( auxValue > 8 && auxValue <= 10) {
+            auxLabel = 'Experto';
+          }
+          return auxLabel;
+        }
+      }
+    }
   };
   public radarChartLabels: Label[] = [];
 
